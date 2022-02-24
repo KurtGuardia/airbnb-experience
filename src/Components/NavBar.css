@@ -1,0 +1,12 @@
+.nav-bar {
+  height: 7rem;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-bar--logo {
+  height: 3rem;
+  padding-left: 3rem;
+}
