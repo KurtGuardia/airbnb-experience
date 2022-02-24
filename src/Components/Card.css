@@ -1,0 +1,27 @@
+.card {
+}
+
+.card--image {
+  position: relative;
+}
+
+.card--image__text {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 5px;
+  border-radius: 2px;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 110%;
+}
+
+.card--description__rating .light {
+  color: #918e9b;
+}
+
+.card--description__price .bold {
+  font-weight: 600;
+}
