@@ -1,24 +1,34 @@
 import './Card.css';
-import person from '../imgs/person1.png';
 import star from '../imgs/star.svg';
 
-function Card() {
+function Card(props) {
+  console.log(props);
+  let badgeText;
+  props.openSpots === 0
+    ? (badgeText = 'SOLD OUT')
+    : (badgeText = `${props.location}`);
+
   return (
     <div className='card'>
       <div className='card--image'>
-        <p className='card--image__text'>Sold out</p>
-        <img src={person} alt='person' className='card--image__img' />
+        {badgeText && <p className='card--image__text'>{badgeText}</p>}
+        <img
+          src={`./imgs/${props.coverImg}`}
+          alt='person'
+          className='card--image__img'
+        />
       </div>
       <div className='card--description'>
         <div className='card--description__rating'>
-          <img src={star} alt='star' /> 5.0{' '}
-          <span className='light'>(6) USA</span>
+          <img src={star} alt='star' />
+          {props.stats.rating.toFixed(1)}{' '}
+          <span className='light'>
+            ({props.stats.reviewCount}) {props.country}
+          </span>
         </div>
-        <p className='card--description__title'>
-          Life lessons with Katie Zaferes
-        </p>
+        <p className='card--description__title'>{props.title}</p>
         <p className='card--description__price'>
-          <span className='bold'>From $136</span> / person
+          <span className='bold'>From $ {props.price}</span> / person
         </p>
       </div>
     </div>
